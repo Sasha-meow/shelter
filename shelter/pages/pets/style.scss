@@ -1,0 +1,42 @@
+@import "../../assets/styles/_theme.scss";
+
+body {
+    @include main-theme(false);
+}
+
+#pets-page {
+    @include flex-col;
+    background-color: $color-light-l;
+
+    h3 {
+        @include font-h3;
+        color: $color-dark-l;
+        align-items: center;
+        text-align: center;
+    }
+
+    .list-wrapper {
+        @include flex-row;
+        flex-wrap: wrap;
+        padding: 60px 0;
+        justify-content: space-between;
+        row-gap: 30px;
+    }
+
+    .pagination-wrapper {
+        @include flex-row;
+        @include center-align;
+
+        .pagination-buttons {
+            @include flex-row;
+            
+            .arrWrapper:not(:last-child) {
+                padding-right: 20px;
+            }
+
+            .active {
+                @extend .button_secondary:hover;
+            }
+        }
+    }
+}
